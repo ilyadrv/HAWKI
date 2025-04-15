@@ -103,7 +103,7 @@ async function exportAsPDF() {
 
     // summery
     const summeryMsg = convertMsgObjToLog(Array.from(messages).slice(-100));
-    const summery = await requestChatlogSummery(summeryMsg);
+    const summery = (await requestChatlogSummery(summeryMsg)).text;
 
 
 
@@ -328,7 +328,7 @@ async function exportAsWord() {
     }
 
     const summeryMsg = convertMsgObjToLog(Array.from(messages).slice(-100));
-    const summery = await requestChatlogSummery(summeryMsg);
+    const summery = (await requestChatlogSummery(summeryMsg)).text;
 
     const chatLogChildren = [];
     const date = new Date();
@@ -529,7 +529,7 @@ async function preparePrintPage(){
     const formattedDate = `${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()}`
     
     const summeryMsg = convertMsgObjToLog(Array.from(messages).slice(-100));
-    const summery = await requestChatlogSummery(summeryMsg);
+    const summery = (await requestChatlogSummery(summeryMsg)).text;
 
     scrollPanel.innerHTML = 
     `
@@ -604,6 +604,9 @@ function generateMessageElements(messageObj){
         msgTxtElement.innerHTML = detectMentioning(messageObj.content).modifiedText;
     }
     else{
+        try {
+            messageObj.content = JSON.parse(messageObj.content).text    
+        } catch (error) {}        
         let markdownProcessed = formatMessage(messageObj.content);
         msgTxtElement.innerHTML = markdownProcessed;
         formatMathFormulas(msgTxtElement);
