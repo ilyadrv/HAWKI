@@ -12,12 +12,12 @@ class UserSeeder extends Seeder
     {
 
         User::create([
-            'name' => 'AI',
-            'username' => 'HAWKI',
-            'email' => 'HAWKI@hawk.de',
+            'name' => 'RAY',
+            'username' => 'RAY',
+            'email' => 'RAY@xfel.eu',
             'employeetype' => 'AI',
             'publicKey' => '0',
-            'avatar_id' => 'hawkiAvatar.jpg'
+            'avatar_id' => 'rayAvatar.jpg'
         ]);
 
     }
