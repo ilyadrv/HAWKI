@@ -7,9 +7,9 @@
 
 	<title>{{ env('APP_NAME') }}</title>
 
-	<link rel="stylesheet" href="{{ asset('css_v2.0.0/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('css_v2.0.0/handshake_style.css') }}">
-	<link rel="stylesheet" href="{{ asset('css_v2.0.0/settings_style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css_v2.0.1/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css_v2.0.1/handshake_style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css_v2.0.1/settings_style.css') }}">
 
 </head>
 <body>
