@@ -64,12 +64,12 @@ function formatMessage(rawContent, groundingMetadata = '') {
     
     // Apply markdown rendering
     const markdownProcessed = md.render(processedContent);
-    console.log(markdownProcessed)
+    //console.log(markdownProcessed)
     
     // Restore math and think block content
     let finalContent = postprocessContent(markdownProcessed, mathReplacements, thinkReplacements);
     finalContent = convertHyperlinksToLinks(finalContent);
-    console.log(finalContent)
+    //console.log(finalContent)
     
     // Restore preserved HTML elements
     finalContent = restoreGoogleCitations(finalContent);

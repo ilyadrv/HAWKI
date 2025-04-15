@@ -223,7 +223,7 @@ async function buildRequestObjectForAiConv(msgAttributes, messageElement = null,
             }
             else{
                 requestObj.isAi = true;
-                console.log('checkpoint')
+                //console.log('checkpoint')
                 const submittedObj = await submitMessageToServer(requestObj, `/req/conv/sendMessage/${activeConv.slug}`);
 
                 submittedObj.content = cryptoContent;
